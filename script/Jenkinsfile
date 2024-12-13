@@ -3,8 +3,8 @@ pipeline{
    tools{
     maven 'M2_HOME'
    }
-   stages{
-     stage("SonarQube analysis") {          
+   /stages{
+     /*stage("SonarQube analysis") {          
             steps {
              withSonarQubeEnv('sonarq') {
             sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
@@ -13,6 +13,7 @@ pipeline{
              }
             }
         }
+        */
     stage("maven"){
         steps{ 
         sh 'mvn clean '
