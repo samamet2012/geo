@@ -23,7 +23,7 @@ pipeline{
         sh 'mvn package'
         }
     }
-    stage('upload artifact'){
+    stage('upload artifacts'){
         steps{
             sh 'curl -uadmin:AP8gcgmmset5jeYChTJYDN6XmDd -T \
             target/bio*.jar \
