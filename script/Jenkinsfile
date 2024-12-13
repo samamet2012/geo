@@ -6,8 +6,11 @@ pipeline{
    stages{
     stage('sonar scan'){
         steps{
+            withSonarQubeEnv('SonarQube'){
             sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
             -Dsonar.projectKey=samamet2012_geo-app'
+            }
+            
         }
     }
     stage("maven1"){
