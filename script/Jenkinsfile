@@ -23,14 +23,14 @@ pipeline{
         sh 'mvn package'
         }
     }
-    stage('upload artifacts'){
+    /*stage('upload artifacts'){
         steps{
             sh 'curl -uadmin:AP8gcgmmset5jeYChTJYDN6XmDd -T \
             target/bio*.jar \
             "http://ec2-52-91-134-51.compute-1.amazonaws.com:8081/artifactory/geolocation/geo/bio_${BUILD_ID}.jar"'
         }
     }
-    /*stage('docker login'){
+    stage('docker login'){
         steps{
             sh 'aws ecr get-login-password --region us-east-1 | \
             docker login --username AWS --password-stdin \
