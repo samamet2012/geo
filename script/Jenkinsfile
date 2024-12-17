@@ -30,7 +30,7 @@ pipeline{
         "http://3.88.231.28:8081/artifactory/geo-solution/geo/bio_${BUILD_ID}.jar"'
         }
     }
-    stage('docker login'){
+    stage('docker login details'){
         steps{
             sh 'aws ecr get-login-password \
             --region us-east-1 | docker login \
