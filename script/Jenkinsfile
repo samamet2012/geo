@@ -30,6 +30,14 @@ pipeline{
         "http://3.88.231.28:8081/artifactory/geo-solution/geo/bio_${BUILD_ID}.jar"'
         }
     }
+    stage('docker login'){
+        steps{
+            sh 'aws ecr get-login-password \
+            --region us-east-1 | docker login \
+            --username AWS --password-stdin \
+            976887127912.dkr.ecr.us-east-1.amazonaws.com'
+        }
+    }
    } 
 }
 
